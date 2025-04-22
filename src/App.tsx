@@ -1,35 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
 function App() {
-  const [count, setCount] = useState(0)
+  const name: string = "HYO";
+  const age: number = 3;
+  const hobby: string = "누워자기";
+
+  const handleClick = () => {
+    console.log("버튼 클릭됨!");
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+    <div>
+      <h1>Hello, React + Vite + TypeScript!</h1>
+      <p>
+        {name}님은 {age}살입니다. 취미는 {hobby} 입니다.
       </p>
-    </>
-  )
+      <button onClick={handleClick}>눌러보세요</button>
+      {age >= 20 ? <p>성인입니다</p> : <p>미성년자입니다.</p>}
+    </div>
+  );
 }
 
-export default App
+export default App;
